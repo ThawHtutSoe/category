@@ -11,14 +11,14 @@ export default function Home() {
   const [category, setCategory] = useState([]);
 
   async function fetchProducts() {
-    const data = await fetch("api/product");
+    const data = await fetch("/api/product");
     // const data = await fetch(`http://localhost:3000/product`);
     const p = await data.json();
     setProducts(p);
   }
 
   async function fetchCategory() {
-    const data = await fetch("api/category");
+    const data = await fetch("/api/category");
     const c = await data.json();
     setCategory(c);
   }
@@ -36,7 +36,7 @@ export default function Home() {
   const deleteById = (id) => async () => {
     if (!confirm("Are you sure?")) return;
     
-    await fetch(`api/product/${id}`, {
+    await fetch(`/api/product/${id}`, {
       method: "DELETE",
     });
     fetchProducts();
