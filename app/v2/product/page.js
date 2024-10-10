@@ -36,6 +36,8 @@ export default function Home() {
     }).then(() => fetchProducts());
   };
 
+
+
   const deleteById = (id) => async () => {
     if (!confirm("Are you sure?")) return;
 
