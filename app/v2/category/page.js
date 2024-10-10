@@ -28,7 +28,7 @@ export default function Home() {
   ];
 
   const APIBASE = process.env.NEXT_PUBLIC_API_URL;
-  console.log(`/api/category`);
+  console.log("api/category");
   async function fetchCategory() {
     const data = await fetch(`/api/category`);
     const c = await data.json();
@@ -50,7 +50,7 @@ export default function Home() {
   function handleCategoryFormSubmit(data) {
     if (editMode) {
       // data.id = data._id
-      fetch(`/api/category`, {
+      fetch("api/category", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -62,7 +62,7 @@ export default function Home() {
       });
       return
     }
-    fetch(`/api/category`, {
+    fetch("api/category", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
